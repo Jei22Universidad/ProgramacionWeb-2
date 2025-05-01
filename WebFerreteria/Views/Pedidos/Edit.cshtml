@@ -1,0 +1,135 @@
+﻿@model WebFerreteria.Models.Pedido
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<body>
+    <div class="col s12 l4">
+        <div class="row Titulo">
+            <h2>Almacen J&D</h2>
+        </div>
+    </div>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo"><img src="~/imagenes/logo.png" alt=""></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Inicio</a></li>
+                <li><a asp-area="" asp-controller="Clientes" asp-action="Index">Registro de clientes</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class='dropdown-trigger ' href='#' data-target='dropdown1'>Procesar solicitudes ⮯</a></li>
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a asp-area="" asp-controller="Entregas" asp-action="Index"><i class="material-icons">motorcycle</i>Entregas a Domicilio</a></li>
+                    <!-- <li><a href="#!">Pedidos</a></li> -->
+                    <li class="divider" tabindex="-1"></li>
+                    <!-- <li><a href="#!">three</a></li> -->
+                    <li><a asp-area="" asp-controller="Facturas" asp-action="Index"><i class="material-icons">assignment_returned</i>Facturacion</a></li>
+                    <li><a asp-area="" asp-controller="Pedidos" asp-action="Index"><i class="material-icons">book</i>Pedidos clinetes</a></li>
+                </ul>
+                <!-- <li><a href="">facturación</a></li> -->
+                <li><a href="">Administrar información</a></li>
+                <li><a asp-area="" asp-controller="Inventarios" asp-action="Index">inventario (Stack)</a></li>
+                <li><a asp-area="" asp-controller="Usuarios" asp-action="Index">Registros</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="" class="waves-effect waves-light btn">Salir</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Inicio</a></li>
+        <li><a asp-area="" asp-controller="Clientes" asp-action="Index">Registro de clientes</a></li>
+        <li><a class='dropdown-trigger ' href='#' data-target='dropdown2'>Procesar solicitudes ⮯</a></li>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown2' class='dropdown-content'>
+            <li><a asp-area="" asp-controller="Entregas" asp-action="Index"><i class="material-icons">motorcycle</i>Entregas a Domicilio</a></li>
+            <!-- <li><a href="#!">Pedidos</a></li> -->
+            <li class="divider" tabindex="-1"></li>
+            <!-- <li><a href="#!">three</a></li> -->
+            <li><a asp-area="" asp-controller="Facturas" asp-action="Index"><i class="material-icons">assignment_returned</i>Facturacion</a></li>
+            <li><a asp-area="" asp-controller="Pedidos" asp-action="Index"><i class="material-icons">book</i>Pedidos clinetes</a></li>
+        </ul>
+        <li><a href="collapsible.html">Administrar información</a></li>
+        <li><a asp-area="" asp-controller="Inventarios" asp-action="Index">inventario (Stack)</a></li>
+        <li><a asp-area="" asp-controller="Usuarios" asp-action="Index">Registros</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="" class="waves-effect waves-light btn">Salir</a></li>
+    </ul>
+    <section class="col s12 l9">
+
+        <h4 class="center">Editar Pedido</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="PedidoId" />
+                    <div class="input-field col s3">
+                        <label asp-for="FechaPedido" class="control-label">Fechad del pedido</label>
+                        <input asp-for="FechaPedido" type="text" class="datepicker" />
+                        <span asp-validation-for="FechaPedido" class="text-danger"></span>
+                    </div>
+                   @*  <div class="form-group">
+                        <label asp-for="Estado" class="control-label"></label>
+                        <input asp-for="Estado" class="form-control" />
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div> *@
+                    <div class="input-field col s3">
+                        <select asp-for="Estado" class="form-control">
+                            <option value="" disabled selected>Selecione el estado</option>
+                            <option value="pendiente">pendiente</option>
+                            <option value="procesado">procesado</option>
+                        </select>
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                    <div class="input-field col s5">
+                        <label asp-for="Observaciones" class="control-label"></label>
+                        <input asp-for="Observaciones" class="form-control" />
+                        <span asp-validation-for="Observaciones" class="text-danger"></span>
+                    </div>
+                    <div class="input-field col s3">
+@*                         <label asp-for="ClienteId" class="control-label">Nombre del cliente</label>
+ *@                        <select asp-for="ClienteId" class="form-control" asp-items="ViewBag.ClienteId"></select>
+                        <span asp-validation-for="ClienteId" class="text-danger"></span>
+                    </div>
+                    <div class="input-field col s3">
+@*                         <label asp-for="ProductoId" class="control-label">Nombre del Producto</label>
+ *@                        <select asp-for="ProductoId" class="form-control" asp-items="ViewBag.ProductoId"></select>
+                        <span asp-validation-for="ProductoId" class="text-danger"></span>
+                    </div>
+                    <div class="input-field col s2">
+                        <label asp-for="CantidadProducto" class="control-label">Cantidad Solicitada</label>
+                        <input asp-for="CantidadProducto" class="form-control" />
+                        <span asp-validation-for="CantidadProducto" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" value="Save" class="waves-effect waves-light btn">Actualizar Pdido</button>
+                        <a class="waves-effect waves-light btn" asp-action="Index">Voler a la lista</a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+      
+
+    </section>
+    <br />
+    <br />
+
+    <footer class="row">
+        <div class="col s12 l12">
+            <p>
+                Estamos ubicados en Manizales, Caldas, Colombia.<br />
+                Universidad de Caldas. Tel: 8805903 - 3136462105.<br />
+                <strong>Almacen J&D - 2025</strong> <br>
+                Construye facil
+
+            </p>
+        </div>
+    </footer>
+</body>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,40 @@
+@font-face {
+    font-family: "bebas";
+    src: url("../fonts/BebasNeue.otf") format("otf");
+} 
+/*@font-face {
+	font-family: "grechen";
+	src: url("../fonts/GrechenFuemen-Regular.ttf");
+  } */
+
+h1, h2, h3, h4 {
+    /* color: #0f495d; */
+    font-family: "bebas";
+}
+body{
+    background-color: rgb(215, 222, 228);
+}
+.Titulo{
+	text-align: center;
+}
+.carousel{
+    margin: auto;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.loginField{
+    width: 50%;
+}
+.carousel-item{
+    /* background-color: black; */
+    background-color: rgb(46, 86, 121);
+}
+
+#radioButon form{
+    display: flex;
+}
+form p{
+    margin: auto;
+
+}

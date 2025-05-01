@@ -1,0 +1,55 @@
+ @font-face {
+  font-family: "bebas";
+  src: url("../fonts/BebasNeue.otf") format("otf");
+} 
+
+/* @font-face {
+	font-family: "grechen";
+	src: url("../fonts/GrechenFuemen-Regular.ttf");
+  } */
+
+h1, h2, h3, h4 {
+	color: #0f495d;
+	font-family: "bebas";
+}
+
+#Titulo{
+	text-align: center;
+}
+.Titulo{
+	text-align: center;
+}
+nav{
+	width: 95%;
+	margin: auto;
+}
+
+.nav-wrapper{
+	background-color: rgb(46, 86, 121);
+}
+
+.nav-wrapper img{
+	width: 190px;
+	margin-top: -30%;
+	margin-left: 30px;
+}
+footer{
+	background-color: rgb(46, 86, 121);
+	width: 95%;
+	margin: auto;
+	text-align: center;
+} 
+
+.carousel{
+	margin-left: -5%;
+	margin-top: -80px;
+
+}
+.carousel .carousel-item img{
+	width: 400px;
+	border-radius: 10px;
+}
+body{
+	width: 130%;
+	margin-left: -200px;
+}

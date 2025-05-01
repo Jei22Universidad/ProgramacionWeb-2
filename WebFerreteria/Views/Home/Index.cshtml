@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<div class="col s12 l4">
+    <div class="row Titulo">
+        <h2>Almacen J&D</h2>
+    </div>
+</div>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#!" class="brand-logo"><img src="~/imagenes/logo.png" alt=""></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <!-- Dropdown Structure -->
+            
+            <li><a asp-area="" asp-controller="Usuarios" asp-action="Index1" class="waves-effect waves-light btn">Iniciar sesion</a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+
+    <li><a asp-area="" asp-controller="Usuarios" asp-action="Index1" class="waves-effect waves-light btn">Iniciar sesion</a></li>
+</ul>
+<section class="col s12 l9">
+    <div id="Titulo">
+       
+        <div class="carousel">
+            <a class="carousel-item" href="#one!"><img src="../imagenes/marcas.png"></a>
+            <a class="carousel-item" href="#two!"><img src="../imagenes/clientes.jpg"></a>
+            <a class="carousel-item" href="#three!"><img src="../imagenes/Personal.jpg"></a>
+            <a class="carousel-item" href="#four!"><img src="../imagenes/productos.jpg"></a>
+            <a class="carousel-item" href="#five!"><img src="../imagenes/bodega.jpg"></a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="row">
+    <div class="col s12 l12">
+        <p>
+            Estamos ubicados en Manizales, Caldas, Colombia.<br />
+            Universidad de Caldas. Tel: 8805903 - 3136462105.<br />
+            <strong>Almacen J&D - 2025</strong> <br>
+            Construye facil
+
+        </p>
+    </div>
+</footer>
+   
+
+
